@@ -60,3 +60,20 @@
   color: rgb(255, 255, 255, 0.5);
   font-weight: 300;
 }
+@media only screen and (max-width: 768px) {
+  .footer-logo-content {
+    font-size: 0.8rem;
+  }
+  .quick-link,
+  .office-info {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  .footer-link-title {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  .footer-bottom p {
+    font-size: 0.7rem;
+  }
+}

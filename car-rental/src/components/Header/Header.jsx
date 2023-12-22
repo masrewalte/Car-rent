@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link, NavLink } from "react-router-dom";
 import "../../styles/header.css";
@@ -26,6 +26,8 @@ const navLinks = [
   },
 ];
 const Header = () => {
+  const menuRef = useRef(null);
+  const menuToggle = () => menuRef.current.classList.toggle("menu-active");
   return (
     <header className="header">
       {/* .............header top......... */}
@@ -117,9 +119,9 @@ const Header = () => {
         <Container>
           <div className="navigation-wrapper d-flex align-items-center justify-content-between">
             <span className="mobile-menu">
-              <i class="ri-menu-line"></i>
+              <i class="ri-menu-line" onClick={menuToggle}></i>
             </span>
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <div className="menu">
                 {navLinks.map((item, index) => (
                   <NavLink
